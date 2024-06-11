@@ -51568,7 +51568,7 @@ A.a0X.prototype={
 $0(){},
 $S:0}
 A.pN.prototype={
-af(){return new A.F9(A.aO(["BETTER LUCK\n NEXT TIME!",0.2,"LANYARD",0.1,"BETTER LUCK\n NEXT TIME!  ",0.15,"KEYCHAIN",0.21,"BETTER LUCK\n NEXT TIME!   ",0.1,"SMALL MOUSE PAD",0.08," BETTER LUCK\n NEXT TIME!   ",0.15,"LARGE MOUSE PAD",0.01],t.N,t.i),B.m)}}
+af(){return new A.F9(A.aO(["BETTER LUCK\n NEXT TIME!",0.2,"LANYARD",0.08,"BETTER LUCK\n NEXT TIME!  ",0.15,"KEYCHAIN",0.26,"BETTER LUCK\n NEXT TIME!   ",0.1,"SMALL MOUSE PAD",0.05," BETTER LUCK\n NEXT TIME!   ",0.15,"LARGE MOUSE PAD",0.01],t.N,t.i),B.m)}}
 A.F9.prototype={
 M(a){var s=null,r=t.w
 a.a3(r).toString
