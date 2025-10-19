@@ -1,6 +1,14 @@
-// Add interactive sparkles on click
+// Add interactive sparkles on click/touch
 document.addEventListener('click', function(e) {
     createSparkle(e.clientX, e.clientY);
+});
+
+// Add touch support for mobile devices
+document.addEventListener('touchend', function(e) {
+    if (e.changedTouches && e.changedTouches.length > 0) {
+        const touch = e.changedTouches[0];
+        createSparkle(touch.clientX, touch.clientY);
+    }
 });
 
 function createSparkle(x, y) {
@@ -49,7 +57,9 @@ window.addEventListener('load', function() {
 });
 
 function createConfetti() {
-    const confettiCount = 30;
+    // Reduce confetti count on mobile devices
+    const isMobile = window.innerWidth <= 768;
+    const confettiCount = isMobile ? 20 : 30;
     const confettiElements = ['🌸', '🌹', '💖', '💗', '✨', '🌺'];
     
     for (let i = 0; i < confettiCount; i++) {
