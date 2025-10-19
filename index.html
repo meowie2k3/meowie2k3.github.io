@@ -1,59 +1,89 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
-  <base href="/">
-
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
-
-  <!-- iOS meta tags & icons -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="luckyroll">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
-
-  <title>luckyroll</title>
-  <link rel="manifest" href="manifest.json">
-
-  <script>
-    // The value below is injected by flutter build, do not touch.
-    var serviceWorkerVersion = '2799042284';
-  </script>
-  <!-- This script adds the flutter initialization JS code -->
-  <script src="flutter.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc mừng ngày Phụ nữ Việt Nam 20/10 💐</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <script>
-    window.addEventListener('load', function(ev) {
-      // Download main.dart.js
-      _flutter.loader.loadEntrypoint({
-        serviceWorker: {
-          serviceWorkerVersion: serviceWorkerVersion,
-        },
-        onEntrypointLoaded: function(engineInitializer) {
-          engineInitializer.initializeEngine().then(function(appRunner) {
-            appRunner.runApp();
-          });
-        }
-      });
-    });
-  </script>
+    <!-- Floating roses background -->
+    <div class="roses-container">
+        <div class="rose rose-1">🌹</div>
+        <div class="rose rose-2">🌹</div>
+        <div class="rose rose-3">🌹</div>
+        <div class="rose rose-4">🌹</div>
+        <div class="rose rose-5">🌹</div>
+        <div class="rose rose-6">🌹</div>
+        <div class="rose rose-7">🌹</div>
+        <div class="rose rose-8">🌹</div>
+    </div>
+
+    <!-- Main content -->
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <h1 class="fade-in">
+                    <span class="rose-icon">🌹</span>
+                    Chúc mừng ngày Phụ nữ Việt Nam
+                    <span class="rose-icon">🌹</span>
+                </h1>
+                <p class="date fade-in-delay-1">20 tháng 10</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="recipient fade-in-delay-2">
+                <p class="to-text">Gửi đến</p>
+                <h2 class="name">Lê Minh Khuê</h2>
+                <div class="heart-group">
+                    <span class="heart">💖</span>
+                    <span class="heart">💗</span>
+                    <span class="heart">💖</span>
+                </div>
+            </div>
+
+            <div class="message fade-in-delay-3">
+                <p class="message-text">
+                    Chúc em ngày 20/10 thật nhiều niềm vui và hạnh phúc! 🌸
+                </p>
+                <p class="message-text">
+                    Em là người phụ nữ tuyệt vời, xinh đẹp và đáng yêu. 
+                    Mong rằng nụ cười của em sẽ luôn rạng rỡ như hoa hồng tươi thắm. 🌹
+                </p>
+                <p class="message-text">
+                    Chúc em luôn tươi trẻ, xinh đẹp và thành công trong mọi điều em làm! 
+                </p>
+                <p class="message-text signature">
+                    ✨ Với tất cả sự trân trọng ✨
+                </p>
+            </div>
+
+            <div class="bouquet fade-in-delay-4">
+                <div class="bouquet-container">
+                    <span class="flower">🌹</span>
+                    <span class="flower">🌹</span>
+                    <span class="flower">🌹</span>
+                    <span class="flower">🌹</span>
+                    <span class="flower">🌹</span>
+                    <span class="flower">🌹</span>
+                    <span class="flower">🌹</span>
+                </div>
+            </div>
+
+            <div class="sparkles">
+                <span class="sparkle">✨</span>
+                <span class="sparkle">💫</span>
+                <span class="sparkle">⭐</span>
+                <span class="sparkle">✨</span>
+                <span class="sparkle">💫</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
