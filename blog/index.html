@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - meowie2k3</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .back-link {
+            display: inline-block;
+            margin: 20px 40px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+        .content-area {
+            padding: 40px;
+            text-align: center;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .empty-state {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../" class="back-link">← Back to Home</a>
+        
+        <div class="content-area">
+            <div class="empty-state">📝</div>
+            <h2 class="section-title">Blog</h2>
+            <p class="intro-text">
+                Blog posts coming soon! Stay tuned for thoughts, tutorials, and updates.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

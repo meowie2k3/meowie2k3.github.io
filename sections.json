@@ -1,0 +1,30 @@
+[
+    {
+        "name": "greetings",
+        "icon": "💐",
+        "title": "Greetings",
+        "description": "Special messages and greeting cards",
+        "color": "pink"
+    },
+    {
+        "name": "projects",
+        "icon": "🚀",
+        "title": "Projects",
+        "description": "Personal and development projects",
+        "color": "primary"
+    },
+    {
+        "name": "portfolio",
+        "icon": "💼",
+        "title": "Portfolio",
+        "description": "Showcasing my work and skills",
+        "color": "orange"
+    },
+    {
+        "name": "blog",
+        "icon": "📝",
+        "title": "Blog",
+        "description": "Thoughts, tutorials, and updates",
+        "color": "secondary"
+    }
+]

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greetings - meowie2k3</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .back-link {
+            display: inline-block;
+            margin: 20px 40px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+        .greeting-list {
+            padding: 40px;
+        }
+        .greeting-item {
+            background: white;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+        .greeting-item:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-md);
+        }
+        .greeting-item a {
+            text-decoration: none;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .greeting-icon {
+            font-size: 3rem;
+        }
+        .greeting-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            color: var(--accent-pink);
+        }
+        .greeting-info p {
+            color: var(--text-light);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../" class="back-link">← Back to Home</a>
+        
+        <div class="greeting-list">
+            <h2 class="section-title">💐 Greetings</h2>
+            <p class="intro-text" style="text-align: left; margin-bottom: 40px;">
+                Special messages and greeting cards for different occasions.
+            </p>
+
+            <div class="greeting-item">
+                <a href="khue-2010/">
+                    <span class="greeting-icon">🌹</span>
+                    <div class="greeting-info">
+                        <h3>Vietnamese Women's Day 20/10</h3>
+                        <p>A special greeting card for Lê Minh Khuê</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Add more greeting cards here in the future -->
+        </div>
+    </div>
+</body>
+</html>
