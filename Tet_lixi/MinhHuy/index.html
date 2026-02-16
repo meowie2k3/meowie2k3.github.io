@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lì xì Tết - Minh Huy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #ff6b6b 0%, #feca57 50%, #ff6b6b 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Fireworks and decorations */
+        .firework {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            animation: explode 1s ease-out infinite;
+        }
+
+        @keyframes explode {
+            0% {
+                opacity: 1;
+                transform: scale(0);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(20);
+            }
+        }
+
+        .lantern {
+            position: absolute;
+            font-size: 3rem;
+            animation: swing 3s ease-in-out infinite;
+        }
+
+        @keyframes swing {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+
+        /* Main container */
+        .container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            z-index: 10;
+        }
+
+        .envelope-container {
+            position: relative;
+            margin-bottom: 2rem;
+            cursor: pointer;
+        }
+
+        .envelope {
+            width: 280px;
+            height: 400px;
+            margin: 0 auto;
+            position: relative;
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .envelope.opened {
+            overflow: visible;
+        }
+
+        .envelope:hover {
+            transform: scale(1.05);
+        }
+
+        .envelope-back {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ff4757 0%, #ff6348 100%);
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .envelope-back::before {
+            content: '恭喜发财';
+            position: absolute;
+            font-size: 4rem;
+            color: #ffd700;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .envelope-flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 20%;
+            background: linear-gradient(135deg, #ff6348 0%, #ff8c69 100%);
+            transform-origin: top;
+            transition: transform 0.6s ease, z-index 0s ease 0.6s;
+            z-index: 10;
+        }
+
+        .envelope.opened .envelope-flap {
+            transform: rotateX(-180deg);
+            z-index: 1;
+        }
+
+        .greeting-card {
+            position: absolute;
+            width: 240px;
+            height: 450px;
+            background: linear-gradient(135deg, #fff5e1 0%, #ffe4b5 100%);
+            border-radius: 8px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) translateY(425px);
+            transition: transform 0.6s ease 0.3s, z-index 0s ease 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            padding: 1.5rem;
+            z-index: 5;
+            overflow: hidden;
+        }
+
+        .envelope.opened .greeting-card {
+            transform: translate(-50%, -50%) translateY(-180px);
+            z-index: 15;
+        }
+
+        .greeting-content {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .envelope.opened .greeting-content {
+            opacity: 1;
+            transition-delay: 0.6s;
+        }
+
+        h1 {
+            color: #ff4757;
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .message {
+            color: #333;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 0.8rem;
+        }
+
+        .qr-container {
+            background: white;
+            padding: 0.8rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-top: 0.8rem;
+        }
+
+        .qr-image {
+            width: 100%;
+            max-width: 160px;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .name-tag {
+            background: linear-gradient(135deg, #ff4757 0%, #ff6348 100%);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 12px rgba(255,71,87,0.4);
+        }
+
+        .instruction {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .coins {
+            position: absolute;
+            font-size: 2rem;
+            animation: fall 3s linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0.5;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .envelope {
+                width: 240px;
+                height: 150px;
+            }
+
+            .greeting-card {
+                width: 200px;
+                height: 360px;
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.3rem;
+            }
+
+            .message {
+                font-size: 0.85rem;
+            }
+            
+            .qr-image {
+                max-width: 160px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Decorative lanterns -->
+    <div class="lantern" style="top: 5%; left: 10%;">🏮</div>
+    <div class="lantern" style="top: 10%; right: 15%;">🏮</div>
+
+    <div class="container">
+        <div class="name-tag">Minh Huy</div>
+        <div class="instruction" id="instruction">👇 Nhấn vào phong bì đỏ!</div>
+        <div id="counter" style="display: none; color: white; font-weight: 600; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+            Bạn đã nhìn <span id="count">0</span> lần rồi đấy...
+        </div>
+        
+        <div class="envelope-container">
+            <div class="envelope" id="envelope">
+                <div class="envelope-back"></div>
+                <div class="envelope-flap"></div>
+                <div class="greeting-card">
+                    <div class="greeting-content">
+                        <h1>🧧 Úi giời ơi! 🧧</h1>
+                        <p class="message">
+                            Bạn đã mở phong bì rồi nha!<br>
+                            Vậy là bạn đã đồng ý lì xì cho tui rồi đó! 😏<br>
+                            <br>
+                            <strong>Không có đường lui đâu nhen!</strong> 😈<br>
+                            <small>(Đùa thôi... nhưng mà thật luôn á 👉👈)</small>
+                        </p>
+                        <div class="qr-container">
+                            <img src="../assets/MinhHuy-BankQR.jpg" alt="QR Code" class="qr-image">
+                            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">
+                                Chỉ cần quét mã thôi, không đau đâu! 🥺
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const envelope = document.getElementById('envelope');
+        const instruction = document.getElementById('instruction');
+        const counter = document.getElementById('counter');
+        const countSpan = document.getElementById('count');
+        let isOpened = false;
+        let lookCount = 0;
+        let hoverTimer;
+
+        const funnyMessages = [
+            "Ê chờ chờ, sao chưa nhấn??? 🤔",
+            "Nhấn đi mà, không cắn đâu! 😄",
+            "Tui đang đói bụng lắm rồi đó... 🥺",
+            "Bạn có biết Tết này tui chưa có lì xì nào không? 😢",
+            "OK fine, không nhấn thì thôi... 💔 (nhấn đi mà huhu)",
+            "Nhấn 1 cái thôi mà, tốn gì đâu! 😤",
+            "Tui sẽ nhớ mãi ơn này đó! 🙏✨"
+        ];
+
+        // Track hover time
+        envelope.addEventListener('mouseenter', function() {
+            if (!isOpened) {
+                hoverTimer = setInterval(() => {
+                    lookCount++;
+                    countSpan.textContent = lookCount;
+                    counter.style.display = 'block';
+                    
+                    if (lookCount === 3) {
+                        instruction.textContent = "Nhìn nhiều vậy, nhấn đi chứ! 😏";
+                    } else if (lookCount === 5) {
+                        instruction.textContent = "5 lần rồi nha... Tui đang đợi đó 👀";
+                    } else if (lookCount === 8) {
+                        instruction.textContent = "Okay bạn này hơi kiên nhẫn đấy 😅";
+                    } else if (lookCount >= 10) {
+                        instruction.textContent = "BẠN ƠI NHẤN ĐI MÀ!!! 😭😭😭";
+                    }
+                }, 1000);
+            }
+        });
+
+        envelope.addEventListener('mouseleave', function() {
+            clearInterval(hoverTimer);
+        });
+
+        envelope.addEventListener('click', function() {
+            if (!isOpened) {
+                envelope.classList.add('opened');
+                isOpened = true;
+                clearInterval(hoverTimer);
+                counter.style.display = 'none';
+                instruction.style.display = 'none';
+                createFireworks();
+                createFallingCoins();
+                showThankYouMessages();
+            }
+        });
+
+        function showThankYouMessages() {
+            const messages = [
+                "Yayyy! Bạn là người tốt nhất! 🥳",
+                "Tui biết mà, bạn tốt bụng lắm! 💖",
+                "Cảm ơn bạn nhiều nhaaa! 🎉",
+                "Năm nay tui giàu rồi nèeee! 😎💰"
+            ];
+
+            messages.forEach((msg, index) => {
+                setTimeout(() => {
+                    const msgDiv = document.createElement('div');
+                    msgDiv.style.cssText = `
+                        position: fixed;
+                        top: ${20 + index * 60}px;
+                        right: 20px;
+                        background: linear-gradient(135deg, #ff6b6b, #feca57);
+                        color: white;
+                        padding: 1rem 1.5rem;
+                        border-radius: 10px;
+                        font-weight: 600;
+                        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+                        animation: slideIn 0.5s ease-out;
+                        z-index: 1000;
+                    `;
+                    msgDiv.textContent = msg;
+                    document.body.appendChild(msgDiv);
+
+                    setTimeout(() => {
+                        msgDiv.style.animation = 'slideOut 0.5s ease-out';
+                        setTimeout(() => msgDiv.remove(), 500);
+                    }, 2500);
+                }, index * 600);
+            });
+        }
+
+        function createFireworks() {
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    const firework = document.createElement('div');
+                    firework.className = 'firework';
+                    firework.style.left = Math.random() * 100 + '%';
+                    firework.style.top = Math.random() * 100 + '%';
+                    firework.style.background = `hsl(${Math.random() * 360}, 100%, 60%)`;
+                    document.body.appendChild(firework);
+
+                    setTimeout(() => firework.remove(), 1000);
+                }, i * 100);
+            }
+        }
+
+        function createFallingCoins() {
+            const coinEmojis = ['💰', '🪙', '💵', '💴', '💶', '💷'];
+            
+            setInterval(() => {
+                const coin = document.createElement('div');
+                coin.className = 'coins';
+                coin.textContent = coinEmojis[Math.floor(Math.random() * coinEmojis.length)];
+                coin.style.left = Math.random() * 100 + '%';
+                coin.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                document.body.appendChild(coin);
+
+                setTimeout(() => coin.remove(), 5000);
+            }, 300);
+        }
+
+        // Add some initial decorative elements
+        window.addEventListener('load', () => {
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    const coin = document.createElement('div');
+                    coin.className = 'coins';
+                    coin.textContent = '🪙';
+                    coin.style.left = Math.random() * 100 + '%';
+                    coin.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                    document.body.appendChild(coin);
+                }, i * 500);
+            }
+        });
+    </script>
+</body>
+</html>

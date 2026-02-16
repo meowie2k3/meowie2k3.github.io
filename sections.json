@@ -26,5 +26,12 @@
         "title": "Blog",
         "description": "Thoughts, tutorials, and updates",
         "color": "secondary"
+    },
+    {
+        "name": "Tet_lixi",
+        "icon": "🧧",
+        "title": "Lì Xì Tết",
+        "description": "Lucky money for Tet - Send your wishes!",
+        "color": "pink"
     }
 ]

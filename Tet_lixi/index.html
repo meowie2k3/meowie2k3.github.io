@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lì Xì Tết</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff6b6b 0%, #feca57 50%, #ff9ff3 100%);
+            min-height: 100vh;
+        }
+
+        .content-area {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 3rem;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            color: rgba(255,255,255,0.95);
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+        }
+
+        .lixi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .lixi-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .lixi-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+        }
+
+        .lixi-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .lixi-card h2 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.8rem;
+            color: #ff4757;
+            margin-bottom: 0.5rem;
+        }
+
+        .lixi-card p {
+            color: #666;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .coming-soon {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .coming-soon:hover {
+            transform: none;
+        }
+
+        .badge {
+            background: #feca57;
+            color: #333;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .lixi-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="../" class="back-link">← Quay lại</a>
+    
+    <div class="content-area">
+        <div class="header">
+            <h1>🧧 Lì Xì Tết 🧧</h1>
+            <p>Gửi lời chúc Tết và lì xì may mắn!</p>
+        </div>
+
+        <div class="lixi-grid">
+            <a href="MinhHuy/" class="lixi-card">
+                <div class="lixi-icon">🎉</div>
+                <h2>Minh Huy</h2>
+                <p>Chúc mừng năm mới! Gửi lời chúc và lì xì cho Minh Huy</p>
+            </a>
+
+            <div class="lixi-card coming-soon">
+                <div class="lixi-icon">💝</div>
+                <h2>Minh Khue</h2>
+                <p>Chúc mừng năm mới! Gửi lời chúc và lì xì cho Minh Khue</p>
+                <span class="badge">Sắp ra mắt</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
